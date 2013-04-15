@@ -10,6 +10,10 @@ class AccountTest < ActiveSupport::TestCase
     @account = @client.accounts.create
   end
 
+  def teardown
+    @client.delete
+  end
+
   test "set_number" do
     assert @account.number.present?
     assert @account.number > 1
