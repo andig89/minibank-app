@@ -7,7 +7,7 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   def teardown
-    @client.delete
+    @client.destroy
   end
 
   test "init" do

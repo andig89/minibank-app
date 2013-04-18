@@ -1,6 +1,6 @@
 class Account < ActiveRecord::Base
   belongs_to :client
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   validates :balance, numericality: { only_integer: true }
 

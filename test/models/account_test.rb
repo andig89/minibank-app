@@ -9,7 +9,7 @@ class AccountTest < ActiveSupport::TestCase
   end
 
   def teardown
-    @client.delete
+    @client.destroy
   end
 
   test "set_number" do
@@ -29,5 +29,12 @@ class AccountTest < ActiveSupport::TestCase
     @account.balance = 100
     assert @account.valid?
     assert @account.errors[:balance].empty?
+  end
+
+  test "update_balance" do
+    @account.transactions.create(amount: 100, descr: 'wpłata 1')
+    @account.transactions.create(amount: 350, descr: 'wpłata 2')
+    @account.reload
+    assert_equal 450, @account.balance
   end
 end
