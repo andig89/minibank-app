@@ -4,4 +4,8 @@ MinibankApp::Application.routes.draw do
   resources :clients do
     resources :accounts
   end
+
+  resources :accounts do
+    resources :transactions
+  end
 end
