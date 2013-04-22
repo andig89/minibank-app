@@ -3,7 +3,8 @@ require 'test_helper'
 class AccountTest < ActiveSupport::TestCase
   def setup
     @client = Client.new(name: 'Jan', surname: 'Kowalski',
-                         email: 'jan@wp.pl', phone: '345-678-334')
+                         email: 'jan@wp.pl', phone: '345-678-334',
+                         password: '123123', password_confirmation: '123123')
     assert @client.save
     @account = @client.accounts.create
   end

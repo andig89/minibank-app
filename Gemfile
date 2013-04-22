@@ -14,7 +14,7 @@ gem 'haml-rails'
 gem 'kaminari'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Deploy with Capistrano
 # gem 'capistrano', group: :development
