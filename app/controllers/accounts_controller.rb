@@ -3,7 +3,7 @@ class AccountsController < ApplicationController
   before_filter :find_account, only: [:show, :destroy]
 
   def index
-    @accounts = @client.accounts.order('id')
+    @accounts = @client.accounts.order('id').page(params[:page])
   end
 
   def show

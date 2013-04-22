@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
 
   # GET /clients
   def index
-    @clients = Client.all
+    @clients = Client.all.page(params[:page])
   end
 
   # GET /clients/1
