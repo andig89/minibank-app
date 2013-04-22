@@ -27,6 +27,7 @@
           <% if @client %>
             <ul class="nav">
               <li><%= link_to 'Konta', client_accounts_path(@client) %></li>
+              <li><%= link_to 'Wyloguj', logout_path %></li>
             </ul>
           <% end %>
         </div><!--/.nav-collapse -->
@@ -35,6 +36,9 @@
   </div>
 
   <div class="container">
+    <% if notice.present? %><p class="alert alert-success"><%= notice %></p><% end %>
+    <% if alert.present? %><p class="alert alert-error"><%= alert %></p><% end %>
+
     <%= yield %>
   </div>
 
