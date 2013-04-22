@@ -26,6 +26,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
+      ClientMailer.welcome(@client).deliver
       redirect_to login_path, notice: 'Client was successfully created.'
     else
       render action: 'new'
