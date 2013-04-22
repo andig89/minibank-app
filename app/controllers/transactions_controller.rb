@@ -20,8 +20,8 @@ class TransactionsController < ApplicationController
 
   private
     def find_account
-      @account = Account.find(params[:account_id])
-      @client = @account.client
+      @client = current_client
+      @account = @client.accounts.find(params[:account_id])
     end
 
     def transaction_params

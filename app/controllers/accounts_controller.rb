@@ -21,7 +21,7 @@ class AccountsController < ApplicationController
 
   private
     def find_client
-      @client = Client.find(params[:client_id])
+      @client = current_client
     end
 
     def find_account
