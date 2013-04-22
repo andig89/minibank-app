@@ -24,7 +24,7 @@
         <a class="brand" href="/">MinibankApp</a>
         <a class="brand" href="#"><%= yield :client %></a>
         <div class="nav-collapse collapse">
-          <% if @client %>
+          <% if current_client %>
             <ul class="nav">
               <li><%= link_to 'Konta', client_accounts_path(@client) %></li>
               <li><%= link_to 'Wyloguj', logout_path %></li>

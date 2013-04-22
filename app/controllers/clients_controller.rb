@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
-  before_action :disabled
+  before_action :disabled, except: [:new, :create]
+  skip_before_action :authenticate_client!, only: [:new, :create]
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   # GET /clients
@@ -25,7 +26,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      redirect_to @client, notice: 'Client was successfully created.'
+      redirect_to login_path, notice: 'Client was successfully created.'
     else
       render action: 'new'
     end
@@ -54,7 +55,8 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :surname, :email, :phone)
+      params.require(:client).permit(:name, :surname, :email, :phone,
+                                     :password, :password_confirmation)
     end
 
     def disabled
