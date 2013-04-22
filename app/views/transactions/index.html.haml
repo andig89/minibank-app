@@ -11,3 +11,5 @@
       %td= transaction.descr
 
 %p= paginate @transactions
+
+%p= link_to 'Nowa transakcja', new_account_transaction_path(@account), class: 'btn'
