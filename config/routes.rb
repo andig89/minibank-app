@@ -1,4 +1,6 @@
 MinibankApp::Application.routes.draw do
+  resources :posts
+
   root to: 'sessions#new'
 
   resources :sessions
