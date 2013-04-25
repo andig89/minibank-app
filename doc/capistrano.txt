@@ -1,0 +1,28 @@
+0) 
+  - Dodanie usera na serwerze
+  - Konfiguracja ssh
+  - Instalacja języka ruby w odpowiedniej wersji (rvm)
+  - Konfiguracja środowiska (zmienne, bash, ...)
+  - Instalacja i konfiguracja bazy danych
+    createuser -P mb
+    createdb -O mb mb
+  - Instalacja i konfiguracja nginx-a
+
+1) gem 'capistrano'
+
+2) capify .
+
+3) vim Capfile
+   vim config/deploy.rb
+
+4) cap -T
+   cap deploy:setup
+   cap deploy:check
+
+5) git push
+
+6) shared/config/
+
+7) rake db:setup
+
+8) cap deploy
