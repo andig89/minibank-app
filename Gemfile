@@ -17,7 +17,7 @@ gem 'kaminari'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Deploy with Capistrano
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
 group :production do
   gem 'shelly-dependencies'
