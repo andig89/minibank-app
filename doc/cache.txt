@@ -1,0 +1,12 @@
+* scaffold posts
+
+* gem 'actionpack-page_caching'
+  gem 'actionpack-action_caching'
+
+* config.action_controller.page_cache_directory = "#{Rails.root.to_s}/public/cache"
+
+* doc/nginx.conf
+
+* caches_page :index, :show
+  expire_page action: 'show', id: params[:id]
+  expire_page action: 'index'
