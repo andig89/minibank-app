@@ -15,3 +15,14 @@ def restart
   stop
   start
 end
+
+case ARGV.first
+when 'start'
+  start
+when 'stop'
+  stop
+when 'restart'
+  restart
+else
+  puts 'start | stop | restart'
+end
