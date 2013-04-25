@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ClientsController < ApplicationController
   before_action :disabled, except: [:new, :create]
   skip_before_action :authenticate_client!, only: [:new, :create]
