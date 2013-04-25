@@ -17,7 +17,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
   gem 'sqlite3'
-  gem 'capistrano'
+  gem 'capistrano', '2.13.5'
 end
 
 group :production do

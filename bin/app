@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+def start
+  system "bundle exec rails server thin -d"
+end
+
+def stop
+  pid = File.read("tmp/pids/server.pid").strip
+  system "kill -TERM #{pid}"
+end
+
+def restart
+  stop
+  start
+end
