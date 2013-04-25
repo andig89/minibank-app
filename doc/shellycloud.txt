@@ -1,0 +1,23 @@
+1) Założenie konta w Shelly Cloud
+
+2) Gemfile
+   group :production do
+     gem 'shelly-dependencies'
+     gem 'thin'
+   end
+
+3) config.serve_static_assets = true
+
+4) gem install shelly
+
+5) shelly login
+
+6) Cloudfile
+  $ cd ~/your-app
+  $ shelly add
+  $ git add Cloudfile
+  $ git commit -m "Added Cloudfile"
+
+7) git push minibank-app-staging shelly
+
+8) shelly start
